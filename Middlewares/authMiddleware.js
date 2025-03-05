@@ -65,7 +65,6 @@ exports.allowedTo = (...roles) =>
     // 1) access roles
     // 2) access registered user (req.user.role)
     if (!roles.includes(req.user.role)) {
-      // console.log( req.user.role);
       return next(
         new ApiError("You are not allowed to access this route", 403)
       );
